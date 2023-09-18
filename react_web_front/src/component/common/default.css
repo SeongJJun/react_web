@@ -1,9 +1,9 @@
 /* 
   메인색상
-  222831 rgb(34, 40, 49)
-  393E46 rgb(57, 62, 70)
-  00ADB5 rgb(0, 173, 181)
-  EEEEEE rgb(238, 238, 238)
+  040D12 rgb(4, 13, 18)
+  183D3D rgb(24, 61, 61)
+  5C8374 rgb(92, 131, 116)
+  93B1A6 rgb(147, 177, 166)
 */
 @font-face {
   font-family: ns-l;
@@ -35,7 +35,7 @@ a {
   text-decoration: none;
 }
 header {
-  border-bottom: 1px solid #393e46;
+  border-bottom: 1px solid #5c8374;
   padding: 13px 0;
 }
 .header {
@@ -56,13 +56,13 @@ header {
   padding: 5px 0px;
 }
 .nav > ul > li > a {
-  color: #393e46;
+  color: #5c8374;
   font-family: ns-eb;
 }
 .main-logo > a {
   font-size: 32px;
   font-family: ns-black;
-  color: #393e46;
+  color: #5c8374;
 }
 .header-link {
   display: flex;
@@ -74,7 +74,7 @@ header {
 }
 .header-link > a > span {
   font-size: 30px;
-  color: #393e46;
+  color: #5c8374;
 }
 footer {
   padding: 50px;
