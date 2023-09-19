@@ -1,0 +1,34 @@
+/* 
+  메인색상
+  040D12 rgb(4, 13, 18)
+  183D3D rgb(24, 61, 61)
+  5C8374 rgb(92, 131, 116)
+  93B1A6 rgb(147, 177, 166)
+*/
+.new-pw-input-wrap {
+  padding: 20px 0px;
+  border-top: 2px solid #5c8374;
+  border-bottom: 2px solid #5c8374;
+}
+.pw-input-wrap > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+}
+.pw-input-wrap > div > label {
+  width: 20%;
+  color: #5c8374;
+  font-size: 18px;
+  font-family: ns-b;
+}
+.pw-input-wrap > div > input {
+  width: 50%;
+  margin: 0px 35px;
+}
+.pw-input-wrap > div > button {
+  width: 20%;
+}
+.change-btn-box {
+  margin-top: 30px;
+}

@@ -49,8 +49,22 @@ public class MemberController {
 		String result = memberService.login(member);
 		return result;
 	}
-	@GetMapping(value = "/mypage")
+	@PostMapping(value = "/getMember")
 	public Member mypage(@RequestAttribute String memberId) {
 		return memberService.selectOneMember(memberId);
 	}
+	@PostMapping(value = "/changePhone")
+	public int changePhone(@RequestBody Member member) {
+		return memberService.changePhone(member);
+	}
+	@PostMapping(value = "/delete")
+	public int delete(@RequestAttribute String memberId) {
+		return memberService.delete(memberId);
+	}
+	@PostMapping(value = "pwCheck")
+	public int pwCheck(@RequestBody Member member, @RequestAttribute String memberId) {
+		member.setMemberId(memberId);
+		return memberService.pwCheck(member);
+	}
+	
 }

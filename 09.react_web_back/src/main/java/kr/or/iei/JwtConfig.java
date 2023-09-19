@@ -27,7 +27,7 @@ public class JwtConfig {
 					.and()
 					.authorizeRequests()			//요청에 대한 권한 설정
 					//post요청중에 /member/login, member/join은 그냥 허용
-					.antMatchers(HttpMethod.POST,"/member/login","member/join").permitAll()
+					.antMatchers(HttpMethod.POST,"/member/login","/member/join").permitAll()
 					//post요청중에 /member/로 시작하면 반드시 인증을 하도록 설정
 					.antMatchers(HttpMethod.POST,"/member/**").authenticated()
 					.and()

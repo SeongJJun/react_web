@@ -47,5 +47,25 @@ public class MemberService {
 			return "실패";
 		}
 	}
+	@Transactional
+	public int changePhone(Member member) {
+		// TODO Auto-generated method stub
+		return memberDao.changePhone(member);
+	}
+	@Transactional
+	public int delete(String memberId) {
+		// TODO Auto-generated method stub
+		return memberDao.delete(memberId);
+	}
+	public int pwCheck(Member member) {
+		Member m = memberDao.selectOneMember(member.getMemberId());
+		if(m != null && bCryptPasswordEncoder.matches(member.getMemberPw(), m.getMemberPw())) {
+			return 1;
+		}
+		return 0;
+	}
+
+	
+	
 	
 }
