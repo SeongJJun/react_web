@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import Input from "../util/InputFrm";
 import "./memberChangePw.css";
 import { Button1 } from "../util/Buttons";
@@ -34,17 +33,33 @@ const MemberChangePw = (props) => {
       });
   };
   const changePw = () => {
-    axios
-      .post(
-        "/member/pwCheckMember",
-        { memberPw: memberPw },
-        {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        }
-      )
-      .then((res) => {});
+    if (memberPw !== "" && memberPw === memberPwRe) {
+      axios
+        .post(
+          "/member/changePw",
+          { memberPw },
+          {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          }
+        )
+        .then((res) => {
+          if (res.data === 1) {
+            setIsPwauth(false);
+            setCurrPw("");
+            setMemberPw("");
+            setMemberPwRe("");
+          } else {
+            Swal.fire(
+              "비밀번호변경 중 문제가 발생했습니다. 잠시후 다시 시도해주세요."
+            );
+          }
+        })
+        .catch((res) => {});
+    } else {
+      Swal.fire("비밀번호를 확인하세요");
+    }
   };
   return (
     <div className="my-content-wrap">
