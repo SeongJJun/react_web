@@ -129,3 +129,57 @@
 .file-zone > p:hover {
   background-color: rgba(147, 177, 166, 0.1);
 }
+.board-view-wrap {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.board-view-wrap > div {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.board-view-wrap > .board-view-title {
+  font-family: ns-b;
+  font-size: 1.2em;
+  border-top: 2px solid #183d3d;
+}
+.board-view-info {
+  display: flex;
+}
+.board-view-info > div {
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+.board-view-thumbnail {
+  text-align: center;
+}
+.board-view-thumbnail > img {
+  max-width: 100%; /* 원본비율 안 깨지는 한에서 width 100% */
+}
+.board-view-detail {
+  min-height: 400px;
+  border-bottom: 2px solid #183d3d;
+}
+.board-view-file {
+  min-height: 30px;
+}
+.board-view-file > .board-file {
+  padding: 10px;
+  position: relative;
+}
+.board-view-file > .board-file:hover {
+  background-color: rgba(147, 177, 166, 0.1);
+}
+.board-file > .file-icon {
+  position: absolute;
+  top: 11.5px;
+  cursor: pointer;
+  color: #5c8374;
+}
+.board-file > .file-name {
+  margin-left: 30px;
+}
+.board-content-box .ql-container {
+  height: 400px;
+}
