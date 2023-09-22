@@ -125,6 +125,7 @@
 .file-zone > p {
   margin: 0;
   padding: 5px;
+  position: relative;
 }
 .file-zone > p:hover {
   background-color: rgba(147, 177, 166, 0.1);
@@ -182,4 +183,17 @@
 }
 .board-content-box .ql-container {
   height: 400px;
+}
+.board-view-btn-zone {
+  padding: 20px 0px !important ;
+}
+.board-view-btn-zone > button {
+  width: 60px;
+  margin-right: 20px;
+}
+.file-zone > p > .del-file-icon {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  cursor: pointer;
 }

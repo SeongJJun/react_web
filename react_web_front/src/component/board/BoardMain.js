@@ -3,6 +3,7 @@ import "./board.css";
 import BoardList from "./BoardList";
 import BoardWrite from "./BoardWrite";
 import BoardView from "./BoardView";
+import BoardModify from "./BoardModify";
 
 const BoardMain = (props) => {
   const isLogin = props.isLogin;
@@ -13,6 +14,7 @@ const BoardMain = (props) => {
       <Routes>
         <Route path="/view" element={<BoardView isLogin={isLogin} />} />
         <Route path="write" element={<BoardWrite />} />
+        <Route path="modify" element={<BoardModify />} />
         {/* path="*"은 모든 Route들 중 제일 아래에 위치 */}
         <Route path="*" element={<BoardList isLogin={isLogin} />} />
       </Routes>

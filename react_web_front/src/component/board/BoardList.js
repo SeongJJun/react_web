@@ -72,4 +72,5 @@ const BoardItem = (props) => {
     </div>
   );
 };
+
 export default BoardList;
