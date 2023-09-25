@@ -102,6 +102,22 @@ public class BoardService {
 		}
 		return null;
 	}
+	public Map adminList(int reqPage) {
+		int totalCount = boardDao.adminTotalCount();
+		int pageNaviSize = 5;
+		int numPerPage = 10;
+		PageInfo pi = pagination.getPageInfo(reqPage, numPerPage, pageNaviSize, totalCount);
+		List boardList = boardDao.adminBoardList(pi);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("pi", pi);
+		map.put("list", boardList);
+		return map;
+	}
+	@Transactional
+	public int changeStatus(Board b) {
+		// TODO Auto-generated method stub
+		return boardDao.changeStatus(b);
+	}
 }
 
 
