@@ -32,7 +32,7 @@ function App() {
 const UserList = () => {
   const [userList, setUserList] = useState([]);
   useEffect(() => {
-    axios.get("/user/list").then((res) => {
+    axios.get(process.env.REACT_APP_DB_HOST + "/user/list").then((res) => {
       setUserList(res.data);
     });
   }, []);
@@ -77,9 +77,11 @@ const UserView = () => {
   const userNo = location.state.userNo;
   const [user, setUser] = useState({});
   useEffect(() => {
-    axios.get("/user/one/" + userNo).then((res) => {
-      setUser(res.data);
-    });
+    axios
+      .get(process.env.REACT_APP_DB_HOST + "/user/one/" + userNo)
+      .then((res) => {
+        setUser(res.data);
+      });
   }, []);
   return (
     <ul>
@@ -97,11 +99,13 @@ const JoinUser = () => {
   const navigate = useNavigate();
   const join = () => {
     const data = { userName, userAge, userAddr };
-    axios.post("/user/join", data).then((res) => {
-      if (res.data === 1) {
-        navigate("/selectAll");
-      }
-    });
+    axios
+      .post(process.env.REACT_APP_DB_HOST + "/user/join", data)
+      .then((res) => {
+        if (res.data === 1) {
+          navigate("/selectAll");
+        }
+      });
   };
 
   return (
